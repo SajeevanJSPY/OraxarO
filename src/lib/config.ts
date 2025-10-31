@@ -10,7 +10,7 @@ export interface Config {
 export function setConfig(connection?: ConnectionAttributes, oracleDataPath?: string) {
     config = {
         oracleDataPath,
-        connection
+        connection,
     };
 }
 
