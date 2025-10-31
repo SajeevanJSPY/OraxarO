@@ -31,7 +31,7 @@ It provides both a **REPL CLI** and a **web interface** to interactively explore
 
 ```bash
     git clone https://github.com/sajeevanjspy/OraxarO.git
-    cd oraXray
+    cd OraxarO
 ```
 
 ### 2. Install Dependencies
