@@ -1,11 +1,7 @@
 import readline from 'readline';
 import chalk from 'chalk';
 
-const usage = `
-  Commands:
-    clear               - Clear the Screen
-    exit                - Exit REPL
-`;
+import { handleCommand } from './commands';
 
 export function startRepl() {
     console.log(chalk.greenBright('Welcome to OraxarO REPL'));
@@ -31,8 +27,11 @@ export function startRepl() {
             readline.clearScreenDown(process.stdout);
         }
 
-        if (input === 'help') {
-            console.log(chalk.gray(usage));
+        try {
+            const output = await handleCommand(input);
+            if (output) console.log(output);
+        } catch (err) {
+            console.error(chalk.red('Error:'), (err as Error).message);
         }
 
         rl.prompt();
