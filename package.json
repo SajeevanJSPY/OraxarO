@@ -10,6 +10,7 @@
     "run:watch": "bun run --watch src/index.ts"
   },
   "dependencies": {
+    "chalk": "^5.6.2",
     "oracledb": "^6.10.0"
   },
   "devDependencies": {

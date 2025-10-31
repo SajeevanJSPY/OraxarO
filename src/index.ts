@@ -1,1 +1,3 @@
-console.log("hello world");
+import { startRepl } from "./repl/repl";
+
+startRepl()
