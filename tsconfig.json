@@ -4,6 +4,12 @@
     "module": "Preserve",
     "moduleDetection": "force",
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": [
+        "src/lib/*"
+      ]
+    },
     // Bundler mode
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
