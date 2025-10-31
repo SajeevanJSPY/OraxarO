@@ -9,8 +9,12 @@
     "run:cli": "bun run src/index.ts",
     "run:watch": "bun run --watch src/index.ts"
   },
+  "dependencies": {
+    "oracledb": "^6.10.0"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/oracledb": "^6.10.0"
   },
   "peerDependencies": {
     "typescript": "^5"
