@@ -1,5 +1,7 @@
 # OraxarO
 
+<img src="./assets/oraxaro.png" alt="OraxarO Logo" width="600"/>
+
 **OraXarO** is a visualization and reverse-engineering toolkit for exploring **Oracle Database Internals**
 <br>
 designed to `inspect`, `decode`, and `visualize` internal database structures such as **processes**, **storages**, and **instance details**
