@@ -1,10 +1,15 @@
 import { handleServeCommand } from './serve';
 
 const usage = `
-  Commands:
-    serve               - serve a web UI
-    clear               - Clear the Screen
-    exit                - Exit REPL
+OraXarO REPL - Oracle Database Toolkit
+
+Available Commands:
+    config     Manage application configuration (e.g., database connection)
+    serve      Launch the interactive web UI dashboard
+    clear      Clear the REPL screen
+    exit       Exit the REPL session
+
+Type "<command> help" for more details on any command.
 `;
 
 export async function handleCommand(input: string) {
