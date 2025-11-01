@@ -1,3 +1,4 @@
+import { handleConfigCommand } from './config';
 import { handleUICommand } from './ui';
 
 const usage = `
@@ -21,6 +22,9 @@ export async function handleCommand(input: string) {
 
         case 'ui':
             return handleUICommand(args);
+
+        case 'config':
+            return handleConfigCommand(args);
 
         default:
             return "Unknown command. Type 'help' for help.";
