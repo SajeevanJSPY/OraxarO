@@ -1,11 +1,11 @@
-import { handleServeCommand } from './serve';
+import { handleUICommand } from './ui';
 
 const usage = `
 OraXarO REPL - Oracle Database Toolkit
 
 Available Commands:
     config     Manage application configuration (e.g., database connection)
-    serve      Launch the interactive web UI dashboard
+    ui         Launch the interactive web UI dashboard
     clear      Clear the REPL screen
     exit       Exit the REPL session
 
@@ -19,8 +19,8 @@ export async function handleCommand(input: string) {
         case 'help':
             return usage;
 
-        case 'serve':
-            return handleServeCommand(args);
+        case 'ui':
+            return handleUICommand(args);
 
         default:
             return "Unknown command. Type 'help' for help.";
