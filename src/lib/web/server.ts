@@ -4,9 +4,13 @@ import { getComponent, renderPage } from './ssr';
 
 const PORT = 3000;
 
-let webServer: Bun.Server<undefined>;
+let webServer: ReturnType<typeof Bun.serve> | null = null;
 
 export async function serve() {
+    if (webServer) {
+        throw new Error('server is already running');
+    }
+
     webServer = Bun.serve({
         port: PORT,
         async fetch(req) {
@@ -36,10 +40,15 @@ export async function serve() {
         },
         development: true,
     });
-    console.log(chalk.greenBright(`listening on http://localhost:${PORT}`));
+    console.log(chalk.gray(`web server is running on http://localhost:${PORT}`));
 }
 
 export async function close() {
-    console.log(chalk.gray(`closing the connection http://localhost:${PORT}`));
-    await webServer.stop();
+    if (!webServer) {
+        throw new Error('no web server is running');
+    }
+
+    console.log(chalk.gray(`closing the web server connection`));
+    await webServer.stop(true);
+    webServer = null;
 }

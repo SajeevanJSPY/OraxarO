@@ -17,14 +17,14 @@ export async function handleUICommand(input: string[]) {
 
     switch (command) {
         case 'connect':
-            serve();
-            return 'running the server';
+            await serve();
+            break;
         case 'close':
             await close();
-            return 'closed the connection';
+            break;
         case 'help':
             return usage;
         default:
-            throw new Error('Unknown command. Type `serve help` for help');
+            throw new Error('Unknown subcommand. Type `ui help` for usage.');
     }
 }
