@@ -26,6 +26,6 @@ export async function close() {
     );
 }
 
-export function getConnetion() {
+export function getConnection() {
     return connection;
 }
