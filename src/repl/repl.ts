@@ -25,6 +25,8 @@ export function startRepl() {
         if (input === 'clear') {
             readline.cursorTo(process.stdout, 0, 0);
             readline.clearScreenDown(process.stdout);
+            rl.prompt();
+            return;
         }
 
         try {
