@@ -25,7 +25,7 @@ export async function close() {
     );
 }
 
-export function getConnection() {
+export function getConnection(): oracledb.Connection {
     if (!connection) throw new Error('not connected to oracle database');
     return connection;
 }
