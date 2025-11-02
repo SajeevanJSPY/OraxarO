@@ -32,3 +32,8 @@ export function renderPage(path: string, vars: TemplateContext = {}): string {
 
     return html;
 }
+
+export function getAsset(pathname: string): Bun.BunFile {
+    const assetPath = path.join(__dirname, 'public', `${pathname}`);
+    return Bun.file(assetPath);
+}

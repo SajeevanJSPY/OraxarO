@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { getComponent, renderPage } from './ssr';
+import { getAsset, getComponent, renderPage } from './ssr';
 
 const PORT = 3000;
 
@@ -17,9 +17,7 @@ export async function serve() {
             const url = new URL(req.url);
 
             // static file serving
-            if (url.pathname.startsWith('/js/') || url.pathname.startsWith('/css/')) {
-                return new Response(Bun.file(`.${url.pathname}`));
-            }
+            if (url.pathname.startsWith('/js/')) return new Response(getAsset(url.pathname));
 
             // components
             const navbar = getComponent('navbar');
